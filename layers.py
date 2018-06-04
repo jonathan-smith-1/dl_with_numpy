@@ -6,7 +6,7 @@ class Layer():
     Base class for a single layer of neural network.
     """
 
-    def __init__(self):
+    def __init__(self, n_in, n_out):
         self.input = None
         self.output = None
         self.input_size = None
@@ -16,6 +16,9 @@ class Layer():
 
         self.next = None  # next node in the computation graph
         self.prev = None  # previous node in the computation graph
+
+        self.input_size = n_in
+        self.output_size = n_out
 
     def forward_pass(self):
         pass
@@ -40,7 +43,7 @@ class LinearLayer(Layer):
     """
 
     def __init__(self, n_in, n_out, seed=0):
-        super(LinearLayer, self).__init__()
+        super(LinearLayer, self).__init__(n_in=n_in, n_out=n_out)
 
         np.random.seed(seed)
         self.W = np.random.normal(0.0, n_in ** -0.5, (n_in, n_out))  # parameters of the linear layer

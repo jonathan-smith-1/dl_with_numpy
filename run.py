@@ -33,10 +33,12 @@ network = NeuralNetwork()
 network.add_input_layer(N_i, hidden_nodes)
 network.add_sigmoid_activation()
 
-out = LinearLayer(hidden_nodes, output_nodes)
-network.add_output_layer(out)
+#out = LinearLayer(hidden_nodes, output_nodes)
+#network.add_output_layer(out)
 
-loss = MeanSquareLoss()
+network.add_output_layer(n_out=1)
+
+loss = MeanSquareLoss(1, 1)  # TODO - fix this.  Should not need to add arguments for loss layer.
 network.add_loss_layer(loss)
 
 

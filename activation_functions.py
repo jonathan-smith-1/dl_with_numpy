@@ -1,6 +1,7 @@
 import numpy as np
 from layers import Layer
 
+
 class SigmoidActivation(Layer):
     """
     Sigmoid activation layer of neural network
@@ -9,7 +10,7 @@ class SigmoidActivation(Layer):
     """
 
     def __init__(self, n):
-        super(SigmoidActivation, self).__init__()
+        super(SigmoidActivation, self).__init__(n_in=n, n_out=n)
 
     def sigmoid(self, x):
         return 1 / (1 + np.exp(-x))
