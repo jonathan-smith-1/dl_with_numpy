@@ -3,10 +3,19 @@ import numpy as np
 
 class Layer:
     """
-    Base class for a single layer of neural network.
+    Base class for a single layer of neural network.  'Layer' includes activation and loss layers.
     """
 
     def __init__(self, n_in, n_out):
+
+        """
+        Initialise attributes of base class.
+
+        Args:
+            n_in (integer): Size of input to this layer.  This layer accepts inputs with dimension [batch_size, n_in].
+            n_out (integer): Size of output of this layer.  This layer creates outputs with dimension
+                             [batch_size, n_out]
+        """
 
         self.input = None
         self.output = None
@@ -21,32 +30,76 @@ class Layer:
         self.prev = None  # previous node in the computation graph
 
     def forward_pass(self):
+
+        """
+        Calculate the output of this layer from its input and store the result.
+
+        Returns:
+            Nothing
+        """
         pass
 
     def backward_pass(self):
+
+        """
+        Calculate the derivative of this layer's input with respect to the loss from the derivative of this layer's
+        output with respect to the loss.  Store the result.
+
+        Returns:
+            Nothing
+        """
         pass
 
     def calc_param_grads(self):
+
+        """
+        Calculate the gradient of the loss with respect to this layer's parameters, if there are any.  Store the result.
+
+        Returns:
+            Nothing
+        """
         pass
 
     def update_params(self, lr):
+
+        """
+        Update this layer's parameters, if there are any.
+
+        Args:
+            lr (float): Learning rate
+
+        Returns:
+            Nothing
+
+        """
         pass
 
 
 class LinearLayer(Layer):
-    """
-    Linear layer of neural network.
 
-    n_in: Integer. Size of input to layer
-    n_out: Integer. Size of output of layer
-    seed: Integer. Random seed for initialisation of layer's parameters
+    """
+    A linear layer for a neural network.
     """
 
     def __init__(self, n_in, n_out, seed=0):
+
+        """
+
+        Args:
+            n_in (integer): Size of input to this layer.  This layer accepts inputs with dimension [batch_size, n_in].
+
+            n_out (integer): Size of output of this layer.  This layer creates outputs with dimension
+                             [batch_size, n_out]
+
+            seed (integer): Random seed for initialising the linear layer's parameters.
+        """
+
         super(LinearLayer, self).__init__(n_in=n_in, n_out=n_out)
 
         np.random.seed(seed)
-        self.W = np.random.normal(0.0, n_in ** -0.5, (n_in, n_out))  # parameters of the linear layer
+
+        self.W = np.random.normal(0.0, n_in ** -0.5, (n_in, n_out))  # Initialise parameters of the linear layer
+                                                                     # with fan-in approach.
         self.dL_dW = None  # derivative of loss w.r.t. parameters W
 
     def forward_pass(self):
