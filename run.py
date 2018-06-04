@@ -21,21 +21,17 @@ debug = 0
 
 # Build neural network
 
-iterations = 250
-learning_rate = 1.5
-hidden_nodes = 6
-output_nodes = 1
+iterations = 1000
 
-N_i = x_train.shape[1]
+n_in = x_train.shape[1]
 
 network = NeuralNetwork()
 
-network.add_input_layer(N_i, hidden_nodes)
+network.add_input_layer(n_in, n_out=6)
 network.add_sigmoid_activation()
-
-
+network.add_hidden_layer(n_out=4)
+network.add_sigmoid_activation()
 network.add_output_layer(n_out=1)
-
 network.add_loss_layer()
 
 

@@ -36,6 +36,12 @@ class NeuralNetwork:
         new_layer = LinearLayer(n_in, n_out)
         self._add_layer(new_layer)
 
+    def add_hidden_layer(self, n_out):
+
+        n_in = self.tail.output_size
+        new_layer = LinearLayer(n_in, n_out)
+        self._add_layer(new_layer)
+
     def add_output_layer(self, n_out):
 
         n_in = self.tail.output_size
