@@ -1,5 +1,5 @@
 .. dl_with_numpy documentation master file, created by
-   sphinx-quickstart on Mon Jun  4 16:27:38 2018.
+   sphinx-quickstart on Mon Jun  4 17:21:07 2018.
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
