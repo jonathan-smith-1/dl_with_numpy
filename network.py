@@ -1,7 +1,9 @@
 from layers import LinearLayer
 from activation_functions import SigmoidActivation
+from losses import MeanSquareLoss
 
-class NeuralNetwork():
+
+class NeuralNetwork:
 
     """
     A simple neural network.
@@ -41,8 +43,9 @@ class NeuralNetwork():
         self._add_layer(new_layer)
         self.output_layer = new_layer
 
-    def add_loss_layer(self, new_layer):
+    def add_loss_layer(self):
 
+        new_layer = MeanSquareLoss()
         self._add_layer(new_layer)
         self.loss_layer = new_layer
 

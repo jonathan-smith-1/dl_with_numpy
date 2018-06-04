@@ -8,8 +8,8 @@ class MeanSquareLoss(Layer):
 
     """
 
-    def __init__(self, n_in, n_out):
-        super(MeanSquareLoss, self).__init__(n_in=n_in, n_out=n_out)
+    def __init__(self):
+        super(MeanSquareLoss, self).__init__(n_in=None, n_out=None)
 
         self.dL_dout = 1  # output of this layer is the loss, so this derivative is 1
         self.mean_sq_loss = None
