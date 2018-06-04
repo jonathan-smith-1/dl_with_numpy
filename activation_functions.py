@@ -12,7 +12,8 @@ class SigmoidActivation(Layer):
     def __init__(self, n):
         super(SigmoidActivation, self).__init__(n_in=n, n_out=n)
 
-    def sigmoid(self, x):
+    @staticmethod
+    def sigmoid(x):
         return 1 / (1 + np.exp(-x))
 
     def sigmoid_deriv(self, x):
