@@ -1,10 +1,12 @@
+from layers import LinearLayer
+
 class NeuralNetwork():
 
-    def __init__(self):
+    """
+    A simple neural network.
+    """
 
-        """
-        nodes: List of integers.  Number of nodes in each layer. including the final layer.
-        """
+    def __init__(self):
 
         # Computation graph is a doubly-linked list
         self.head = None
@@ -24,6 +26,11 @@ class NeuralNetwork():
             self.head = self.tail = new_layer
 
         self.tail = new_layer
+
+    def add_input_layer(self, n_in, n_out):
+
+        new_layer = LinearLayer(n_in, n_out)
+        self.add_hidden_layer(new_layer)
 
     def add_output_layer(self, new_layer):
 

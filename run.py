@@ -27,19 +27,15 @@ hidden_nodes = 6
 output_nodes = 1
 
 N_i = x_train.shape[1]
-#network = NeuralNetwork([N_i, hidden_nodes, output_nodes])
 
 network = NeuralNetwork()
 
-"""
-h1 = LinearLayer(N_i, hidden_nodes)
-network.add_hidden_layer(h1)
+network.add_input_layer(N_i, hidden_nodes)
 
 s1 = SigmoidActivation(hidden_nodes)
-network.add_hidden_layer(h1)
-"""
+network.add_hidden_layer(s1)
 
-out = LinearLayer(N_i, output_nodes)
+out = LinearLayer(hidden_nodes, output_nodes)
 network.add_output_layer(out)
 
 loss = MeanSquareLoss()
@@ -50,6 +46,6 @@ for step in range(iterations):
     # Printing out the training progress
     network.training_step(x_train, y_train, learn_rate=0.01)
 
-    network.forward_pass(x_train)  # TODO - Remove the need for y_train here
+    network.forward_pass(x_train)
     train_loss = 2 * network.loss_layer.mean_sq_loss  # mean_sq_loss attribute is 0.5*MSE
     print('Step: {}   Loss: {:.2f}'.format(step, train_loss))
