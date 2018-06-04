@@ -1,4 +1,5 @@
 from layers import LinearLayer
+from activation_functions import SigmoidActivation
 
 class NeuralNetwork():
 
@@ -16,9 +17,10 @@ class NeuralNetwork():
         self.output_layer = None
         self.loss_layer = None
 
-    def add_hidden_layer(self, new_layer):
+    def _add_layer(self, new_layer):
 
-        # Add new layer to doubly-linked list computation graph
+        """ Helper function for adding a new layer to the computation graph"""
+
         if self.tail:
             self.tail.next = new_layer
             new_layer.prev = self.tail
@@ -30,17 +32,23 @@ class NeuralNetwork():
     def add_input_layer(self, n_in, n_out):
 
         new_layer = LinearLayer(n_in, n_out)
-        self.add_hidden_layer(new_layer)
+        self._add_layer(new_layer)
 
     def add_output_layer(self, new_layer):
 
-        self.add_hidden_layer(new_layer)
+        self._add_layer(new_layer)
         self.output_layer = new_layer
 
     def add_loss_layer(self, new_layer):
 
-        self.add_hidden_layer(new_layer)
+        self._add_layer(new_layer)
         self.loss_layer = new_layer
+
+    def add_sigmoid_activation(self):
+
+        n = self.tail.output_size
+        new_layer = SigmoidActivation(n)
+        self._add_layer(new_layer)
 
     def forward_pass(self, x):
 

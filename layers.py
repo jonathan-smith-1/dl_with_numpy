@@ -9,6 +9,8 @@ class Layer():
     def __init__(self):
         self.input = None
         self.output = None
+        self.input_size = None
+        self.output_size = None
         self.dL_din = None  # derivative of loss w.r.t. input
         self.dL_dout = None  # derivative of loss w.r.t. output
 
@@ -43,6 +45,9 @@ class LinearLayer(Layer):
         np.random.seed(seed)
         self.W = np.random.normal(0.0, n_in ** -0.5, (n_in, n_out))  # parameters of the linear layer
         self.dL_dW = None  # derivative of loss w.r.t. parameters W
+
+        self.input_size = n_in
+        self.output_size = n_out
 
     def forward_pass(self):
         self.output = np.dot(self.input, self.W)

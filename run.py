@@ -31,9 +31,7 @@ N_i = x_train.shape[1]
 network = NeuralNetwork()
 
 network.add_input_layer(N_i, hidden_nodes)
-
-s1 = SigmoidActivation(hidden_nodes)
-network.add_hidden_layer(s1)
+network.add_sigmoid_activation()
 
 out = LinearLayer(hidden_nodes, output_nodes)
 network.add_output_layer(out)
