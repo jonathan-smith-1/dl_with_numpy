@@ -50,6 +50,6 @@ for step in range(iterations):
     # Printing out the training progress
     network.training_step(x_train, y_train, learn_rate=0.01)
 
-    network.forward_pass(x_train, y_train)  # TODO - Remove the need for y_train here
+    network.forward_pass(x_train)  # TODO - Remove the need for y_train here
     train_loss = 2 * network.loss_layer.mean_sq_loss  # mean_sq_loss attribute is 0.5*MSE
     print('Step: {}   Loss: {:.2f}'.format(step, train_loss))

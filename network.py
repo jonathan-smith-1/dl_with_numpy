@@ -35,17 +35,15 @@ class NeuralNetwork():
         self.add_hidden_layer(new_layer)
         self.loss_layer = new_layer
 
-    def forward_pass(self, x, y):
+    def forward_pass(self, x):
 
         """
         Performs forward pass through neural network
 
         x: 2d numpy array.  Input to first layer.
-        y: 2d numpy array.  True labels.
         """
 
         self.head.input = x
-        self.loss_layer.y = y
 
         layer = self.head
         while layer.next:
@@ -56,12 +54,10 @@ class NeuralNetwork():
         # forward pass on final layer
         layer.forward_pass()
 
-    def backwards_pass(self, y):
+    def backwards_pass(self):
 
         """
         Performs the backwards pass of the neural network.
-
-        y: 2D numpy array of the output.
         """
 
         layer = self.loss_layer
@@ -110,7 +106,9 @@ class NeuralNetwork():
 
     def training_step(self, x, y, learn_rate):
 
-        self.forward_pass(x, y)
-        self.backwards_pass(y)
+        self.loss_layer.y = y
+
+        self.forward_pass(x)
+        self.backwards_pass()
         self.calc_gradients()
         self.update_params(learn_rate)
