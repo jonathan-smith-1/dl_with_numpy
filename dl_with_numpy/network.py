@@ -1,6 +1,6 @@
-from layers import LinearLayer
-from activation_functions import SigmoidActivation
-from losses import MeanSquareLoss
+from dl_with_numpy.layers import LinearLayer
+from dl_with_numpy.activation_functions import SigmoidActivation
+from dl_with_numpy.losses import MeanSquareLoss
 
 
 class NeuralNetwork:

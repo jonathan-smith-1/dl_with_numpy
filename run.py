@@ -1,5 +1,5 @@
 import numpy as np
-from network import NeuralNetwork
+from dl_with_numpy.network import NeuralNetwork
 
 
 # Generate a mini dataset with two datapoints for testing.
