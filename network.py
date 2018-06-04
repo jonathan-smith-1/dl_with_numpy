@@ -1,53 +1,39 @@
-from layers import LinearLayer
-from activation_functions import SigmoidActivation
-from losses import MeanSquareLoss
-
-
 class NeuralNetwork():
-    def __init__(self, num_nodes):
+
+    def __init__(self):
 
         """
         nodes: List of integers.  Number of nodes in each layer. including the final layer.
         """
 
-        self.layers = self.construct_layers(num_nodes)  # list of the layers objects, from input to output
+        # Computation graph is a doubly-linked list
+        self.head = None
+        self.tail = None
 
-        self.link_layers(self.layers)  # link the layers together
+        # Record of which layers are output and loss
+        self.output_layer = None
+        self.loss_layer = None
 
-        self.first_layer = self.layers[0]
-        self.output_layer = self.layers[-2]
-        self.loss_layer = self.layers[-1]
+    def add_hidden_layer(self, new_layer):
 
-    def construct_layers(self, num_nodes):
+        # Add new layer to doubly-linked list computation graph
+        if self.tail:
+            self.tail.next = new_layer
+            new_layer.prev = self.tail
+        else:
+            self.head = self.tail = new_layer
 
-        layers = []
-        in_idx = 0
-        out_idx = 1
+        self.tail = new_layer
 
-        while out_idx < len(num_nodes) - 1:
-            layers.append(LinearLayer(num_nodes[in_idx], num_nodes[out_idx]))  # add the linear layer
-            layers.append(SigmoidActivation(num_nodes[out_idx]))  # add the activation layer
+    def add_output_layer(self, new_layer):
 
-            in_idx += 1
-            out_idx += 1
+        self.add_hidden_layer(new_layer)
+        self.output_layer = new_layer
 
-        layers.append(LinearLayer(num_nodes[-2], num_nodes[-1]))  # add the final linear layer
+    def add_loss_layer(self, new_layer):
 
-        layers.append(MeanSquareLoss())
-
-        return layers
-
-    def link_layers(self, layers):
-
-        """
-        Populate the self.next and self.prev attributes of each Layer object to link them together
-        """
-
-        for i in range(len(layers) - 1):
-            layers[i].next = layers[i + 1]
-
-        for i in range(1, len(self.layers)):
-            layers[i].prev = layers[i - 1]
+        self.add_hidden_layer(new_layer)
+        self.loss_layer = new_layer
 
     def forward_pass(self, x, y):
 
@@ -58,10 +44,10 @@ class NeuralNetwork():
         y: 2d numpy array.  True labels.
         """
 
-        self.first_layer.input = x
+        self.head.input = x
         self.loss_layer.y = y
 
-        layer = self.first_layer
+        layer = self.head
         while layer.next:
             layer.forward_pass()
             layer.next.input = layer.output  # propagate forward pass
@@ -94,7 +80,7 @@ class NeuralNetwork():
 
         """
 
-        layer = self.first_layer
+        layer = self.head
 
         while True:
             layer.calc_param_grads()
@@ -112,7 +98,7 @@ class NeuralNetwork():
         learn_rate: Float. Learning rate for neural network parameter updates
         """
 
-        layer = self.first_layer
+        layer = self.head
 
         while True:
             layer.update_params(learn_rate)
