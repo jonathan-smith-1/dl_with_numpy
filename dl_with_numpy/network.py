@@ -236,6 +236,9 @@ class NeuralNetwork:
 
         """
 
+        if not self.head or not self.tail:
+            raise ValueError('No network to train')
+
         self.loss_layer.y = y
 
         self.forward_pass(x)
