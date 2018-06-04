@@ -1,8 +1,9 @@
 import numpy as np
-from my_answers import LinearLayer, SigmoidActivation, MeanSquareLoss, NeuralNetwork
+#from my_answers import LinearLayer, SigmoidActivation, MeanSquareLoss, NeuralNetwork
+from network import NeuralNetwork
+
 
 # Construct the mini dataset for testing
-
 x_train = np.array([[1., 2., 3.],
                     [8., 6., 3]])
 
