@@ -20,7 +20,7 @@ network = NeuralNetwork()
 
 network.add_input_layer(x_train.shape[1], n_out=6)
 network.add_sigmoid_activation()
-network.add_hidden_layer(n_out=4)
+network.add_linear_layer(n_out=4)
 network.add_sigmoid_activation()
 network.add_output_layer(n_out=1)
 network.add_loss_layer()

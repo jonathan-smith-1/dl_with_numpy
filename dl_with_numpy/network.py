@@ -68,7 +68,7 @@ class NeuralNetwork:
         new_layer = LinearLayer(n_in, n_out)
         self._add_layer(new_layer)
 
-    def add_hidden_layer(self, n_out):
+    def add_linear_layer(self, n_out):
 
         """
         Adds a linear hidden layer to the end of the neural network.  The input dimension to this layer is

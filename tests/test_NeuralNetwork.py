@@ -59,14 +59,14 @@ def test_multiple_input_layers():
         network.add_input_layer(n_in=2, n_out=2)
 
 
-def test_add_hidden_layer_without_input_layer():
+def test_add_linear_layer_without_input_layer():
 
     """
     WHEN:
         The neural network has no input layer
 
     AND:
-        The add_hidden_layer method is called
+        The add_linear_layer method is called
 
     REQUIREMENT:
         A ValueError Exception shall be raised
@@ -81,7 +81,7 @@ def test_add_hidden_layer_without_input_layer():
 
         network = NeuralNetwork()
 
-        network.add_hidden_layer(n_out=2)
+        network.add_linear_layer(n_out=2)
 
 
 def test_add_output_layer_without_input_layer():
