@@ -51,6 +51,7 @@ class NeuralNetwork:
 
         """
         Add a linear input layer to the neural network.  This must be the first layer added to the neural network.
+        If the neural network is already found to have one or more layers, a ValueError is raised.
 
         Args:
             n_in (integer): Size of inputs to this layer.  Inputs expected to have dimensions [batch_size, n_in]
@@ -60,6 +61,9 @@ class NeuralNetwork:
             Nothing
 
         """
+
+        if self.head or self.tail:
+            raise ValueError('Cannot add an input layer to a network that already exists')
 
         new_layer = LinearLayer(n_in, n_out)
         self._add_layer(new_layer)
@@ -77,6 +81,9 @@ class NeuralNetwork:
             Nothing
 
         """
+
+        if not self.head or not self.tail:
+            raise ValueError("Can't add hidden layer to an empty network")
 
         n_in = self.tail.output_size
         new_layer = LinearLayer(n_in, n_out)
@@ -99,6 +106,9 @@ class NeuralNetwork:
 
         """
 
+        if not self.head or not self.tail:
+            raise ValueError("Can't add output layer to an empty network")
+
         n_in = self.tail.output_size
         new_layer = LinearLayer(n_in, n_out)
         self._add_layer(new_layer)
@@ -114,6 +124,12 @@ class NeuralNetwork:
 
         """
 
+        if not self.head or not self.tail:
+            raise ValueError("Can't add loss layer to an empty network")
+
+        if self.loss_layer:
+            raise ValueError("Can't add a second loss layer to the neural network")
+
         new_layer = MeanSquareLoss()
         self._add_layer(new_layer)
         self.loss_layer = new_layer
@@ -127,6 +143,9 @@ class NeuralNetwork:
             Nothing
 
         """
+
+        if not self.head or not self.tail:
+            raise ValueError("Can't add sigmoid activation layer to an empty network")
 
         n = self.tail.output_size
         new_layer = SigmoidActivation(n)
@@ -226,6 +245,8 @@ class NeuralNetwork:
         """
         Perform a full training step using the backpropagation algorithm.
 
+        This method requires the neural network to have at least an output layer and a loss layer.
+
         Args:
             x (2d Numpy array): Training data x values.  Dimensions must be [batch_size x input_dim]
             y (2d Numpy array): Training data y values (i.e. labels).  Dimensions must be [batch_size x 1]
@@ -238,6 +259,9 @@ class NeuralNetwork:
 
         if not self.head or not self.tail:
             raise ValueError('No network to train')
+
+        if not self.loss_layer:
+            raise ValueError('Cannot train network when no loss layer is defined')
 
         self.loss_layer.y = y
 

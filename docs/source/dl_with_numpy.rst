@@ -36,6 +36,13 @@ dl\_with\_numpy.network module
     :undoc-members:
     :show-inheritance:
 
+tests.test_NeuralNetwork module
+-------------------------------
+
+.. automodule:: tests.test_NeuralNetwork
+    :members:
+    :undoc-members:
+    :show-inheritance:
 
 Module contents
 ---------------
