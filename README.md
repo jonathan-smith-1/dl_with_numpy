@@ -32,7 +32,7 @@ source activate my_env_name
 pip install -r requirements.txt
 python run.py
 ```
-If you change any docstrings, to update the documentation run the following command from within the docs directory:
+If you change any docstrings, to update the documentation run the following command from within the `docs` directory:
 
 ```shell
 make clean
