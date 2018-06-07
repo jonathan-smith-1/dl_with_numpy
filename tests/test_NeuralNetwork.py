@@ -108,13 +108,13 @@ def test_add_output_layer_without_input_layer():
         network.add_output_layer(n_out=2)
 
 
-def test_add_loss_layer_without_input_layer():
+def test_add_mse_loss_layer_without_input_layer():
     """
     WHEN:
         The neural network has no input layer
 
     AND:
-        The add_loss_layer method is called
+        The add_mse_loss_layer method is called
 
     REQUIREMENT:
         A ValueError Exception shall be raised
@@ -129,7 +129,7 @@ def test_add_loss_layer_without_input_layer():
 
         network = NeuralNetwork()
 
-        network.add_loss_layer()
+        network.add_mse_loss_layer()
 
 
 def test_add_sigmoid_activation_layer_without_input_layer():
@@ -156,14 +156,14 @@ def test_add_sigmoid_activation_layer_without_input_layer():
         network.add_sigmoid_activation()
 
 
-def test_multiple_loss_layers():
+def test_two_mse_loss_layers():
 
     """
     WHEN:
         The neural network already has a loss layer
 
     AND:
-        The add_loss_layer method is called
+        The add_mse_loss_layer method is called
 
     REQUIREMENT:
         A ValueError Exception shall be raised
@@ -179,8 +179,8 @@ def test_multiple_loss_layers():
         network = NeuralNetwork()
 
         network.add_input_layer(n_in=2, n_out=2)
-        network.add_loss_layer()
-        network.add_loss_layer()
+        network.add_mse_loss_layer()
+        network.add_mse_loss_layer()
 
 
 def test_no_loss_layer():

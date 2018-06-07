@@ -23,7 +23,7 @@ network.add_sigmoid_activation()
 network.add_linear_layer(n_out=4)
 network.add_sigmoid_activation()
 network.add_output_layer(n_out=1)
-network.add_loss_layer()
+network.add_mse_loss_layer()
 
 
 # Train neural network

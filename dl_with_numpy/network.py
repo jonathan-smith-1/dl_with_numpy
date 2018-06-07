@@ -114,7 +114,7 @@ class NeuralNetwork:
         self._add_layer(new_layer)
         self.output_layer = new_layer
 
-    def add_loss_layer(self):
+    def add_mse_loss_layer(self):
 
         """
         Adds a mean-square error loss layer to the end of the neural network.

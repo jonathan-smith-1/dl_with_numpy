@@ -10,7 +10,7 @@ network.add_sigmoid_activation()
 network.add_linear_layer(n_out=4)
 network.add_sigmoid_activation()
 network.add_output_layer(n_out=1)
-network.add_loss_layer()
+network.add_mse_loss_layer()
 
 for _ in range(iterations):
     network.training_step(x_train, y_train, learn_rate=0.01)
