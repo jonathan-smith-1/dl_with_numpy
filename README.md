@@ -25,7 +25,7 @@ The packages I am using are in `requirements.txt` but if all you want to do is r
 To get set up and running this code in a conda virtual environment, run the following in the command line:
 
 ```shell
-git clone <url of this page>
+git clone https://github.com/jonathan-smith-1/dl_with_numpy
 cd dl_with_numpy
 conda create -n my_env_name python
 source activate my_env_name
@@ -35,7 +35,6 @@ python run.py
 If you change any docstrings, to update the documentation run the following command from within the docs directory:
 
 ```shell
-cd docs
 make clean
 make html
 ```
