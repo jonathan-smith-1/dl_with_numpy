@@ -1,7 +1,8 @@
 import numpy as np
+import abc
 
 
-class Layer():
+class Layer(metaclass=abc.ABCMeta):
     """
     Base class for a single layer of neural network.  'Layer' includes activation and loss layers.
     """
@@ -29,6 +30,7 @@ class Layer():
         self.next = None  # next node in the computation graph
         self.prev = None  # previous node in the computation graph
 
+    @abc.abstractmethod
     def forward_pass(self):
 
         """
@@ -38,6 +40,7 @@ class Layer():
             Nothing
         """
 
+    @abc.abstractmethod
     def backward_pass(self):
 
         """
