@@ -1,7 +1,7 @@
 import numpy as np
 
 
-class Layer:
+class Layer():
     """
     Base class for a single layer of neural network.  'Layer' includes activation and loss layers.
     """
@@ -37,7 +37,6 @@ class Layer:
         Returns:
             Nothing
         """
-        pass
 
     def backward_pass(self):
 
@@ -48,7 +47,6 @@ class Layer:
         Returns:
             Nothing
         """
-        pass
 
     def calc_param_grads(self):
 
@@ -58,7 +56,6 @@ class Layer:
         Returns:
             Nothing
         """
-        pass
 
     def update_params(self, lr):
 
@@ -72,7 +69,6 @@ class Layer:
             Nothing
 
         """
-        pass
 
 
 class LinearLayer(Layer):
