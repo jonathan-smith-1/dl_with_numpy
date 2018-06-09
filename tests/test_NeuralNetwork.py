@@ -3,6 +3,47 @@ import numpy as np
 from dl_with_numpy.network import NeuralNetwork
 
 
+def test_basic_operation():
+
+    """
+    WHEN:
+        A basic neural network is constructed
+
+    AND:
+        The training_step method is called
+
+    REQUIREMENT:
+        No exceptions shall be raised.
+
+
+    Returns:
+        Nothing
+
+    """
+
+    x_train = np.array([[1., 2., 3.],
+                        [8., 6., 3]])
+
+    y_train = np.array([[1.],
+                        [2.]])
+
+    # Build neural network
+    network = NeuralNetwork()
+
+    network.add_input_layer(x_train.shape[1], n_out=6)
+    network.add_sigmoid_activation()
+    network.add_linear_layer(n_out=4)
+    network.add_sigmoid_activation()
+    network.add_output_layer(n_out=1)
+    network.add_mse_loss_layer()
+
+    # Train neural network
+    iterations = 1
+
+    for step in range(iterations):
+        network.training_step(x_train, y_train, learn_rate=0.01)
+
+
 def test_train_empty_network():
 
     """
