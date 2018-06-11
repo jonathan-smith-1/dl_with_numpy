@@ -1,5 +1,5 @@
 import numpy as np
-from dl_with_numpy.layers import Layer
+from dl_with_numpy.layer import Layer
 
 
 class MeanSquareLoss(Layer):
