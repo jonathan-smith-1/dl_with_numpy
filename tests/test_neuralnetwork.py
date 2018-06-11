@@ -1,11 +1,16 @@
+"""Unit tests for NeuralNetwork."""
+
 import pytest
 import numpy as np
 from dl_with_numpy.network import NeuralNetwork
 
+# pylint: disable=invalid-name
+
 
 def test_basic_operation():
-
     """
+    Unit test.
+
     WHEN:
         A basic neural network is constructed
 
@@ -20,7 +25,6 @@ def test_basic_operation():
         Nothing
 
     """
-
     x_train = np.array([[1., 2., 3.],
                         [8., 6., 3]])
 
@@ -40,13 +44,14 @@ def test_basic_operation():
     # Train neural network
     iterations = 1
 
-    for step in range(iterations):
+    for _ in range(iterations):
         network.training_step(x_train, y_train, learn_rate=0.01)
 
 
 def test_train_empty_network():
-
     """
+    Unit test.
+
     WHEN:
         The neural network has no layers
 
@@ -61,9 +66,6 @@ def test_train_empty_network():
         Nothing
 
     """
-
-    # TODO - Remove this method if it is dominated by test_no_input_layer or test_no_loss_layer
-
     with pytest.raises(ValueError):
 
         network = NeuralNetwork()
@@ -75,8 +77,9 @@ def test_train_empty_network():
 
 
 def test_multiple_input_layers():
-
     """
+    Unit test.
+
     WHEN:
         The neural network already has an input layer
 
@@ -91,7 +94,6 @@ def test_multiple_input_layers():
         Nothing
 
     """
-
     with pytest.raises(ValueError):
 
         network = NeuralNetwork()
@@ -101,8 +103,9 @@ def test_multiple_input_layers():
 
 
 def test_add_linear_layer_without_input_layer():
-
     """
+    Unit test.
+
     WHEN:
         The neural network has no input layer
 
@@ -117,7 +120,6 @@ def test_add_linear_layer_without_input_layer():
         Nothing
 
     """
-
     with pytest.raises(ValueError):
 
         network = NeuralNetwork()
@@ -127,6 +129,8 @@ def test_add_linear_layer_without_input_layer():
 
 def test_add_output_layer_without_input_layer():
     """
+    Unit test.
+
     WHEN:
         The neural network has no input layer
 
@@ -141,7 +145,6 @@ def test_add_output_layer_without_input_layer():
         Nothing
 
     """
-
     with pytest.raises(ValueError):
 
         network = NeuralNetwork()
@@ -151,6 +154,8 @@ def test_add_output_layer_without_input_layer():
 
 def test_add_mse_loss_layer_without_input_layer():
     """
+    Unit test.
+
     WHEN:
         The neural network has no input layer
 
@@ -165,7 +170,6 @@ def test_add_mse_loss_layer_without_input_layer():
         Nothing
 
     """
-
     with pytest.raises(ValueError):
 
         network = NeuralNetwork()
@@ -175,6 +179,8 @@ def test_add_mse_loss_layer_without_input_layer():
 
 def test_add_sigmoid_activation_layer_without_input_layer():
     """
+    Unit test.
+
     WHEN:
         The neural network has no input layer
 
@@ -189,7 +195,6 @@ def test_add_sigmoid_activation_layer_without_input_layer():
         Nothing
 
     """
-
     with pytest.raises(ValueError):
 
         network = NeuralNetwork()
@@ -198,8 +203,9 @@ def test_add_sigmoid_activation_layer_without_input_layer():
 
 
 def test_two_mse_loss_layers():
-
     """
+    Unit test.
+
     WHEN:
         The neural network already has a loss layer
 
@@ -214,7 +220,6 @@ def test_two_mse_loss_layers():
         Nothing
 
     """
-
     with pytest.raises(ValueError):
 
         network = NeuralNetwork()
@@ -225,8 +230,9 @@ def test_two_mse_loss_layers():
 
 
 def test_no_loss_layer():
-
     """
+    Unit test.
+
     WHEN:
         The neural network has no loss layer
 
@@ -241,7 +247,6 @@ def test_no_loss_layer():
         Nothing
 
     """
-
     with pytest.raises(ValueError):
 
         # Mini dataset
@@ -261,8 +266,9 @@ def test_no_loss_layer():
 
 
 def test_contiguous_activation_layers():
-
     """
+    Unit test.
+
     WHEN:
         The neural network has two contiguous sigmoid activation layers
 
@@ -277,7 +283,6 @@ def test_contiguous_activation_layers():
         Nothing
 
     """
-
     network = NeuralNetwork()
 
     network.add_input_layer(n_in=2, n_out=3)
