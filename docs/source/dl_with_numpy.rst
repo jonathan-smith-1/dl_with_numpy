@@ -12,10 +12,18 @@ dl\_with\_numpy.activation\_functions module
     :undoc-members:
     :show-inheritance:
 
-dl\_with\_numpy.layers module
------------------------------
+dl\_with\_numpy.layer module
+----------------------------
 
-.. automodule:: dl_with_numpy.layers
+.. automodule:: dl_with_numpy.layer
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+dl\_with\_numpy.linear_layer module
+-----------------------------------
+
+.. automodule:: dl_with_numpy.linear_layer
     :members:
     :undoc-members:
     :show-inheritance:
