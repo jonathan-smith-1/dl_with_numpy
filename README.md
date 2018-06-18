@@ -39,7 +39,7 @@ make clean
 make html
 ```
 
-To run the unit tests, in the `dl_with_numpy` directory, run from the command line:
+To run the unit tests, in the root `dl_with_numpy` directory, run from the command line:
 
 ```shell
 py.test

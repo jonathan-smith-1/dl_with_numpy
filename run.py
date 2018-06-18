@@ -1,7 +1,7 @@
 """Demonstration of building and training a neural network."""
 
 import numpy as np
-from dl_with_numpy.network import NeuralNetwork
+from src.dl_with_numpy.network import NeuralNetwork
 
 
 def main():
@@ -34,9 +34,9 @@ def main():
     network.add_mse_loss_layer()
 
     # Train the neural network
-    iterations = 500
+    steps = 500
 
-    for step in range(iterations):
+    for step in range(steps):
 
         network.training_step(x_train, y_train, learn_rate=0.01)
         print('Step: {}   Loss: {:.2f}'
