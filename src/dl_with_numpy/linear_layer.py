@@ -1,7 +1,7 @@
 """Linear layer for neural network."""
 
 import numpy as np
-from src.dl_with_numpy.layer import Layer
+from .layer import Layer
 
 
 class LinearLayer(Layer):

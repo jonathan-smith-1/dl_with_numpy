@@ -1,8 +1,8 @@
 """Neural network."""
 
-from src.dl_with_numpy.linear_layer import LinearLayer
-from src.dl_with_numpy.activation_functions import SigmoidActivation
-from src.dl_with_numpy.losses import MeanSquareLoss
+from .linear_layer import LinearLayer
+from .activation_functions import SigmoidActivation
+from .losses import MeanSquareLoss
 
 
 class NeuralNetwork:
