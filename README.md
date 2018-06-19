@@ -34,6 +34,6 @@ git clone https://github.com/jonathan-smith-1/dl_with_numpy
 cd dl_with_numpy
 conda create -n my_env_name python
 source activate my_env_name
-pip install -r requirements.txt
+pip install .
 python run.py
 ```
