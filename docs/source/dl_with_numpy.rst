@@ -7,7 +7,7 @@ Submodules
 dl\_with\_numpy.activation\_functions module
 --------------------------------------------
 
-.. automodule:: src.dl_with_numpy.activation_functions
+.. automodule:: dl_with_numpy.activation_functions
     :members:
     :undoc-members:
     :show-inheritance:
@@ -15,7 +15,7 @@ dl\_with\_numpy.activation\_functions module
 dl\_with\_numpy.layer module
 ----------------------------
 
-.. automodule:: src.dl_with_numpy.layer
+.. automodule:: dl_with_numpy.layer
     :members:
     :undoc-members:
     :show-inheritance:
@@ -23,7 +23,7 @@ dl\_with\_numpy.layer module
 dl\_with\_numpy.linear\_layer module
 ------------------------------------
 
-.. automodule:: src.dl_with_numpy.linear_layer
+.. automodule:: dl_with_numpy.linear_layer
     :members:
     :undoc-members:
     :show-inheritance:
@@ -31,7 +31,7 @@ dl\_with\_numpy.linear\_layer module
 dl\_with\_numpy.losses module
 -----------------------------
 
-.. automodule:: src.dl_with_numpy.losses
+.. automodule:: dl_with_numpy.losses
     :members:
     :undoc-members:
     :show-inheritance:
@@ -39,7 +39,7 @@ dl\_with\_numpy.losses module
 dl\_with\_numpy.network module
 ------------------------------
 
-.. automodule:: src.dl_with_numpy.network
+.. automodule:: dl_with_numpy.network
     :members:
     :undoc-members:
     :show-inheritance:
@@ -48,7 +48,7 @@ dl\_with\_numpy.network module
 Module contents
 ---------------
 
-.. automodule:: src.dl_with_numpy
+.. automodule:: dl_with_numpy
     :members:
     :undoc-members:
     :show-inheritance:

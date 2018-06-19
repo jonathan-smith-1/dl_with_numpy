@@ -2,7 +2,7 @@
 
 import pytest
 import numpy as np
-from src.dl_with_numpy.network import NeuralNetwork
+from dl_with_numpy.network import NeuralNetwork
 
 # pylint: disable=invalid-name
 

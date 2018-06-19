@@ -1,7 +1,7 @@
 """Demonstration of building and training a neural network."""
 
 import numpy as np
-from src.dl_with_numpy.network import NeuralNetwork
+from dl_with_numpy.network import NeuralNetwork
 
 
 def main():
