@@ -42,9 +42,10 @@ Acknowledgements
 ================
 
 Many thanks to Ionel Cristian Mărieș for
- * His excellent `post <https://blog.ionelmc
- .ro/2014/05/25/python-packaging/>` on packaging a
- python library.
- * His `cookiecutter <https://github.com/ionelmc/cookiecutter-pylibrary>`
- project on Github.  For this project I wanted to make my own mistakes but
- next time I would just fork that project and go from there.
+
+- His excellent `blog post <https://blog.ionelmc.ro/2014/05/25/python-packaging/>`_
+  on packaging a python library.
+
+- His `cookiecutter-pylibrary <https://github.com/ionelmc/cookiecutter-pylibrary>`_
+  project on Github.  For this project I wanted to make my own mistakes but
+  next time I would just fork his project and go from there.
