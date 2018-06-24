@@ -47,6 +47,9 @@ def test_basic_operation():
     for _ in range(iterations):
         network.training_step(x_train, y_train, learn_rate=0.01)
 
+    x_test = np.array([[1., 2., 3.]])
+    network.forward_pass(x_test)
+
 
 def test_train_empty_network():
     """
