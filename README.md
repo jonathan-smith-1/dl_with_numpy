@@ -1,5 +1,7 @@
 # Deep-Learning-with-Numpy
 
+[![Documentation Status](https://readthedocs.org/projects/dl-with-numpy/badge/?version=latest)](https://dl-with-numpy.readthedocs.io/en/latest/?badge=latest)
+
 A very simple deep learning library implemented in Numpy.
 
 ```python
