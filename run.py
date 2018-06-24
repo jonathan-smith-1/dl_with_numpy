@@ -15,13 +15,8 @@ def main():
     x_train = np.array([[1., 2., 3.],
                         [8., 6., 3]])
 
-    w_generate = np.array([[2.],
-                           [3.],
-                           [1.]])
-
-    b_generate = 4.
-
-    y_train = np.matmul(x_train, w_generate) + b_generate
+    y_train = np.array([[15.],
+                        [41.]])
 
     # Build neural network
     network = NeuralNetwork()
@@ -34,13 +29,18 @@ def main():
     network.add_mse_loss_layer()
 
     # Train the neural network
-    steps = 500
-
+    steps = 250
     for step in range(steps):
 
         network.training_step(x_train, y_train, learn_rate=0.01)
         print('Step: {}   Loss: {:.2f}'
               .format(step, network.loss_layer.mean_sq_loss))
 
+    x_test = np.array([[1., 2., 3.]])
+    network.forward_pass(x_test)
+    prediction = network.output_layer.output
+
+    print('Prediction is:')
+    print(prediction)
 
 main()
