@@ -37,8 +37,7 @@ def main():
               .format(step, network.loss_layer.mean_sq_loss))
 
     x_test = np.array([[1., 2., 3.]])
-    network.forward_pass(x_test)
-    prediction = network.output_layer.output
+    prediction = network.forward_pass(x_test)
 
     print('Prediction is:')
     print(prediction)

@@ -164,7 +164,7 @@ class NeuralNetwork:
             x (2d Numpy array): Data input
 
         Returns:
-            Nothing
+            Numpy array that is output of output layer.
 
         """
         self.head.input = x
@@ -177,6 +177,8 @@ class NeuralNetwork:
 
         # forward pass on final layer
         layer.forward_pass()
+
+        return self.output_layer.output
 
     def backwards_pass(self):
         """

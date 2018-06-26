@@ -31,8 +31,7 @@ Build and train simple neural networks, for example::
 And test them::
 
     x_test = np.array([[1., 2., 3.]])
-    network.forward_pass(x_test)
-    prediction = network.output_layer.output
+    prediction = network.forward_pass(x_test)
 
 Indices and tables
 ==================
