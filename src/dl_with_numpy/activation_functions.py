@@ -1,7 +1,7 @@
 """Activation functions for neural network."""
 
 import numpy as np
-from .layer import Layer
+from dl_with_numpy.layer import Layer
 
 
 class SigmoidActivation(Layer):

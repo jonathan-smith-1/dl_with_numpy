@@ -1,7 +1,7 @@
 """Loss layers for neural network."""
 
 import numpy as np
-from .layer import Layer
+from dl_with_numpy.layer import Layer
 
 
 class MeanSquareLoss(Layer):
