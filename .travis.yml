@@ -12,7 +12,7 @@ install:
   - pip install codecov
 
 script:
-  - pytest --cov
+  - pytest --cov=dl_with_numpy tests/
 
 after_success:
     codecov
