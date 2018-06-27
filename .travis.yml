@@ -10,9 +10,13 @@ install:
   - pip install numpy
   - pip install pytest pytest-cov
   - pip install codecov
+  - pip install pylint pycodestyle pydocstyle
 
 script:
   - pytest --cov
+  - pylint ./src
+  - pycodestyle ./src
+  - pydocstyle ./src
 
 after_success:
     codecov
