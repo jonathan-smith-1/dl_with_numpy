@@ -9,10 +9,17 @@ Overview
 
     * - docs
       - |docs|
+    * - build
+      - |travis|
 
 .. |docs| image:: https://readthedocs.org/projects/dl-with-numpy/badge/?version=latest
     :target: https://dl-with-numpy.readthedocs.io/en/latest/?badge=latest
     :alt: Documentation Status
+
+.. |travis| image:: https://travis-ci.org/jonathan-smith-1/dl_with_numpy.svg?branch=master
+    :alt: Travis-CI Build Status
+    :target: https://travis-ci.org/jonathan-smith-1/dl_with_numpy
+
 
 .. end-badges
 
