@@ -10,7 +10,7 @@ Overview
     * - docs
       - |docs|
     * - build
-      - | |travis| |requires|
+      - | |travis| |requires| |codecov|
 
 .. |docs| image:: https://readthedocs.org/projects/dl-with-numpy/badge/?version=latest
     :target: https://dl-with-numpy.readthedocs.io/en/latest/?badge=latest
@@ -23,6 +23,10 @@ Overview
 .. |requires| image:: https://requires.io/github/jonathan-smith-1/dl_with_numpy/requirements.svg?branch=master
     :alt: Requirements Status
     :target: https://requires.io/github/jonathan-smith-1/dl_with_numpy/requirements/?branch=master
+
+.. |codecov| image:: https://codecov.io/gh/jonathan-smith-1/dl_with_numpy/branch/master/graph/badge.svg
+    :alt: Coverage Status
+    :target: https://codecov.io/gh/jonathan-smith-1/dl_with_numpy
 
 .. end-badges
 
