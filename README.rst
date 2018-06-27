@@ -10,7 +10,7 @@ Overview
     * - docs
       - |docs|
     * - build
-      - |travis|
+      - | |travis| |requires|
 
 .. |docs| image:: https://readthedocs.org/projects/dl-with-numpy/badge/?version=latest
     :target: https://dl-with-numpy.readthedocs.io/en/latest/?badge=latest
@@ -20,6 +20,9 @@ Overview
     :alt: Travis-CI Build Status
     :target: https://travis-ci.org/jonathan-smith-1/dl_with_numpy
 
+.. |requires| image:: https://requires.io/github/jonathan-smith-1/dl_with_numpy/requirements.svg?branch=master
+    :alt: Requirements Status
+    :target: https://requires.io/github/jonathan-smith-1/dl_with_numpy/requirements/?branch=master
 
 .. end-badges
 
