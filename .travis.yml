@@ -14,9 +14,9 @@ install:
 
 script:
   - pytest --cov
-  - pylint ./src
-  - pycodestyle ./src
-  - pydocstyle ./src
+  - pylint ./src/dl_with_numpy
+  - pycodestyle ./src/dl_with_numpy
+  - pydocstyle ./src/dl_with_numpy
 
 after_success:
     codecov
