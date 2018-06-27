@@ -13,10 +13,10 @@ install:
   - pip install pylint pycodestyle pydocstyle
 
 script:
-  - pytest --cov
   - pylint ./src/dl_with_numpy
   - pycodestyle ./src/dl_with_numpy
   - pydocstyle ./src/dl_with_numpy
+  - pytest --cov
 
 after_success:
     codecov
