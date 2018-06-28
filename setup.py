@@ -6,7 +6,7 @@ with open("README.rst", "r") as fh:
 
 setup(
     name='dl_with_numpy',
-    version='0.0.2',
+    version='0.0.3',
     packages=find_packages('src'),
     package_dir={'': 'src'},
     url='https://github.com/jonathan-smith-1/dl_with_numpy',
