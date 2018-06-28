@@ -12,7 +12,7 @@ Overview
     * - build
       - | |travis| |requires| |codecov|
     * - package
-      - | |version| |wheel| |supported_versions| |supported_implementations|
+      - | |wheel| |supported_versions|
 
 .. |docs| image:: https://readthedocs.org/projects/dl-with-numpy/badge/?version=latest
     :target: https://dl-with-numpy.readthedocs.io/en/latest/?badge=latest
@@ -30,20 +30,12 @@ Overview
     :alt: Coverage Status
     :target: https://codecov.io/gh/jonathan-smith-1/dl_with_numpy
 
-.. |version| image:: https://img.shields.io/pypi/v/dl_with_numpy.svg
-    :alt: PyPI Package latest release
-    :target: https://pypi.python.org/pypi/dl_with_numpy
-
 .. |wheel| image:: https://img.shields.io/pypi/wheel/dl_with_numpy.svg
     :alt: PyPI Wheel
     :target: https://pypi.python.org/pypi/dl_with_numpy
 
 .. |supported_versions| image:: https://img.shields.io/pypi/pyversions/dl_with_numpy.svg
     :alt: Supported versions
-    :target: https://pypi.python.org/pypi/dl_with_numpy
-
-.. |supported_implementations| image:: https://img.shields.io/pypi/implementation/dl_with_numpy.svg
-    :alt: Supported implementations
     :target: https://pypi.python.org/pypi/dl_with_numpy
 
 .. end-badges
